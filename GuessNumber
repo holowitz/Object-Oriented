@@ -1,0 +1,41 @@
+import java.util.Scanner; 
+
+import oddeven.RandomNumber;
+
+public class GuessNumber_ 
+{
+
+	public static void main(String[] args) {
+		
+     RandomNumber random = new RandomNumber();
+     int answer;
+     Scanner input = new Scanner(System.in);
+     int random1 = random.GetANumber_Between_1_and_10();
+     
+     System.out.println("Guess the number from 1 to 10.");
+     answer = input.nextInt();
+     
+    if(answer != random1)
+    	
+    { 
+    	if (answer > random1)
+    	{
+    		System.out.printf("You guessed too high. \nThe computer was thinking of %d.", random1);
+    	}
+    		
+    }
+
+    else if (answer < random1)
+    {
+    	System.out.printf("You guessed too low. \nThe computer was thinking of %d.", random1);
+    	
+    }
+     if (answer == random1)
+     {
+    	 System.out.println("You guessed right!");
+     }
+	
+	
+	}
+
+}
