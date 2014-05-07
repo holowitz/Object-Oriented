@@ -1,0 +1,39 @@
+import java.util.Scanner;
+public class GuessNumberDice {
+
+	public static void main(String[] args) 
+	{
+		GuessNumberDice myDice = new GuessNumberDice();
+		Scanner input = new Scanner(System.in);
+		int numberofDice;
+		int userGuess;
+		float computerNumber;
+		
+			
+		System.out.println("Please tell me how many dice you would like to roll.");
+		numberofDice = input.nextInt();
+		computerNumber = myDice.Throw(numberofDice);
+		System.out.printf("Please guess value between 1 and %d", numberofDice*6);
+		userGuess = input.nextInt();
+		if((float)userGuess <= (computerNumber+(computerNumber *.10)) && (float)userGuess >=(computerNumber -(computerNumber *.10)))
+		{
+			System.out.printf("Your guess was close enough or right on. Actual number was %.1f  and you guessed %d", computerNumber, userGuess);
+			System.out.println("\nYou Win!");
+			
+		}
+		else
+		{
+			System.out.printf("You guessed wrong. Actual number was %.1f  and you guessed %d", computerNumber, userGuess);
+			System.out.println("\nSorry! You Lose!");
+			
+		}
+
+	}
+
+ private float Throw(int numberofDice) {
+		return 666;
+	}
+
+
+
+}
